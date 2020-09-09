@@ -1,9 +1,7 @@
-from django.conf.global_settings import MEDIA_ROOT, MEDIA_URL
-from django.core import serializers
-from django.core.files.storage import default_storage
-from django.http import JsonResponse, HttpResponse
 from rest_framework import generics, viewsets
 import os
+
+from rest_framework.parsers import FileUploadParser
 from rest_framework.response import Response
 
 from .models import Pdf
@@ -13,6 +11,7 @@ from PyPDF2 import PdfFileMerger, PdfFileWriter, PdfFileReader
 
 class PdfModelViewSet(viewsets.ModelViewSet):
     serializer_class = PdfSerializer
+    # parser_classes = (FileUploadParser,)
     queryset = Pdf.objects.all()
     lookup_field = 'id'
 
