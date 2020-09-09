@@ -11,5 +11,5 @@ class PdfSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Pdf
-        fields = ['id', 'url', 'pdf_file', 'pdf_file_name', 'created_at', 'updated_at']
+        fields = ['id', 'url', 'pdf_file', 'pdf_file_name', 'total_pages',  'created_at', 'updated_at']
         read_only_fields = ['id']

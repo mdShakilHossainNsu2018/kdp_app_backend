@@ -22,7 +22,9 @@ class PdfModelViewSet(viewsets.ModelViewSet):
             ip = x_forwarded_for.split(',')[0]
         else:
             ip = self.request.META.get('REMOTE_ADDR')
-        serializer.save(ip=ip)
+
+        total_pages = PdfFileReader(self.request.data.get('pdf_file')).getNumPages()
+        serializer.save(ip=ip, total_pages=total_pages)
 
 
 
