@@ -29,6 +29,7 @@ class Pdf(models.Model):
 
 @receiver(pre_save, sender=Pdf)
 def my_callback(sender, instance, *args, **kwargs):
+    file = instance.pdf_file_name
     if(len(instance.pdf_file_name)>20):
         file = instance.pdf_file_name[:12] + '...' + instance.pdf_file_name[-5:]
     instance.pdf_file_name = file
