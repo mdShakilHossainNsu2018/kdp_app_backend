@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('api/', include('pdfCombiner.urls')),
+    path('api/', include('categories.urls')),
     path('api/token/', obtain_auth_token, name='api_token_auth')
 ]
 

@@ -1,0 +1,5 @@
+web: gunicorn hello:app
+web: gunicorn hello:app --preload
+web: gunicorn hello:app --timeout 100
+web: gunicorn --env DJANGO_SETTINGS_MODULE=kdp_app_backend.settings kdp_app_backend.wsgi
+web: gunicorn --check-config APP_MODULE
