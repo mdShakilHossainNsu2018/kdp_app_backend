@@ -47,9 +47,11 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework.authtoken',
     'rest_framework',
+    'import_export',
 
     'pdfCombiner',
     'categories',
+
 ]
 
 MIDDLEWARE = [

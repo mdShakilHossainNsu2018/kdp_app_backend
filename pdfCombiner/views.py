@@ -1,12 +1,7 @@
 from rest_framework import generics, viewsets
-import os
-
-from rest_framework.parsers import FileUploadParser
-from rest_framework.response import Response
-
 from .models import Pdf
 from .serializers import PdfSerializer
-from PyPDF2 import PdfFileMerger, PdfFileWriter, PdfFileReader
+from PyPDF2 import PdfFileReader
 
 
 class PdfModelViewSet(viewsets.ModelViewSet):
