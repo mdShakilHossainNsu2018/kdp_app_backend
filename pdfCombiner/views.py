@@ -1,4 +1,4 @@
-from rest_framework import generics, viewsets
+from rest_framework import viewsets
 from .models import Pdf
 from .serializers import PdfSerializer
 from PyPDF2 import PdfFileReader
