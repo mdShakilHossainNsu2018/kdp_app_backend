@@ -25,6 +25,7 @@ urlpatterns = [
     path('api/', include('pdfCombiner.urls')),
     path('api/', include('categories.urls')),
     path('api/', include('dictionary.urls')),
+    path('back/', include('csv_importer.urls')),
     path('api/token/', obtain_auth_token, name='api_token_auth')
 ]
 

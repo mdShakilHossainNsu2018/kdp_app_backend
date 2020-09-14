@@ -14,14 +14,14 @@ class CategoryAdmin(admin.ModelAdmin):
     search_fields = ('category_name',)
 
 class CategoryResource(resources.ModelResource):
-    # id = fields.Field(
-    #     column_name='parent_category',
-    #     attribute='id',
-    #     widget=ForeignKeyWidget(Category, 'category_name'))
+    # parent_category = fields.Field()
     # print(parent_category)
 
     class Meta:
         model = Category
+
+    # def dehydrate_parent_category(self, category):
+    #     return category.parent_category
 
 # Register your models here.
 # @admin.register(Category)
