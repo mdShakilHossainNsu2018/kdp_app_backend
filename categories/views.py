@@ -12,7 +12,7 @@ class CategoryModelViewSets(viewsets.ModelViewSet):
     serializer_class = CategorySerializer
     queryset = Category.objects.all()
 
-    @method_decorator(cache_page(60*1000)) # cache for 5 minutes
+    @method_decorator(cache_page(60*5)) # cache for 5 minutes
     def list(self, request, format=None):
         queryset = self.filter_queryset(self.get_queryset())
 
