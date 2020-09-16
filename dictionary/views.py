@@ -19,9 +19,8 @@ def hello_world(request):
         # meaning = dictionary.meaning(query)
         # print(meaning)
         synonym = dictionary.synonym(query)
-        print(synonym)
         antonym = dictionary.antonym(query)
-        print(antonym)
+        # print(antonym)
         return Response(
             {"message": "Request successful...",
              "data": {'word': query, 'synonym': synonym, 'antonym': antonym}})
