@@ -9,7 +9,7 @@ class SubCategorySerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class CategorySerializer(serializers.HyperlinkedModelSerializer):
+class CategorySerializer(serializers.ModelSerializer):
     # subcategories = serializers.ManyRelatedField()
     patent_category_name = serializers.CharField(read_only=True, source="parent_category.category_name")
     # subcategories = SubCategorySerializer()
