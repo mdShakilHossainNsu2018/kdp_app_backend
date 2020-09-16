@@ -19,10 +19,10 @@ class CategorySerializer(serializers.HyperlinkedModelSerializer):
         fields = ['id', 'category_name', 'parent_category', 'subcategories', 'parent_category_id', 'patent_category_name', 'url',
                   'created_at', 'updated_at']
 
-    def get_fields(self):
-        fields = super(CategorySerializer, self).get_fields()
-        fields['subcategories'] = CategorySerializer(many=True)
-        return fields
+    # def get_fields(self):
+    #     fields = super(CategorySerializer, self).get_fields()
+    #     fields['subcategories'] = CategorySerializer(many=True)
+    #     return fields
 
         # def get_related_field(self, model_field):
         #     # Handles initializing the `subcategories` field
