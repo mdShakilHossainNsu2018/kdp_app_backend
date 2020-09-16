@@ -14,7 +14,7 @@ from pathlib import Path
 import os
 # Todo: heroku prod settings
 # Configure Django App for Heroku.
-import django_heroku
+# import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -145,12 +145,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.dirname(os.path.join(BASE_DIR, 'media'))
+STATIC_ROOT = os.path.dirname(os.path.join(BASE_DIR, 'static'))
 
 # Todo: heroku prod settings
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
 
 # Heroku: Update database configuration from $DATABASE_URL.
-import dj_database_url
-# Todo Problem
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+# import dj_database_url
+# # Todo Problem
+# db_from_env = dj_database_url.config(conn_max_age=600)
+# DATABASES['default'].update(db_from_env)
