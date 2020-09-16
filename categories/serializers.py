@@ -12,7 +12,7 @@ class SubCategorySerializer(serializers.ModelSerializer):
 class CategorySerializer(serializers.ModelSerializer):
     # subcategories = serializers.ManyRelatedField()
     patent_category_name = serializers.CharField(read_only=True, source="parent_category.category_name")
-    subcategories = SubCategorySerializer()
+    # subcategories = SubCategorySerializer()
 
     class Meta:
         model = Category
