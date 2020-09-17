@@ -17,6 +17,8 @@ import os
 # import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import django_heroku
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
@@ -28,7 +30,7 @@ SECRET_KEY = ')nie8dez3tn8fhve=8q1#l9z2&oz7d^y@gncxd*b2=7f23mxo)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['164.90.238.120', 'https://pure-beyond-40245.herokuapp.com/category-lists']
+ALLOWED_HOSTS = []
 # ALLOWED_HOSTS = []
 X_FRAME_OPTIONS = 'ALLOW-FROM http://127.0.0.1:8000/'
 
@@ -105,23 +107,23 @@ WSGI_APPLICATION = 'kdp_app_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'kdp_app',
-        'USER': 'root',
-        'PASSWORD': 'codeforsolutions.com',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'kdp_app',
+#         'USER': 'root',
+#         'PASSWORD': 'codeforsolutions.com',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -164,10 +166,10 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Todo: heroku prod settings
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
 
 # Heroku: Update database configuration from $DATABASE_URL.
-# import dj_database_url
-# # Todo Problem
-# db_from_env = dj_database_url.config(conn_max_age=600)
-# DATABASES['default'].update(db_from_env)
+import dj_database_url
+# Todo Problem
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)

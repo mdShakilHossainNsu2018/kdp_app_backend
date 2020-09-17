@@ -1,0 +1,1 @@
+web: gunicorn kdp_app_backend.wsgi --log-file -
