@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 # Todo: heroku prod settings
 # Configure Django App for Heroku.
 # import django_heroku
@@ -114,6 +115,14 @@ DATABASES = {
     }
 }
 
+# SECRET_KEY = dj_database_url.config('SECRET_KEY')
+# DEBUG = dj_database_url.config('DEBUG', default=False, cast=bool)
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=dj_database_url.config('DATABASE_URL')
+#     )
+# }
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -169,7 +178,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 django_heroku.settings(locals())
 
 # Heroku: Update database configuration from $DATABASE_URL.
-import dj_database_url
+
 # Todo Problem
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
