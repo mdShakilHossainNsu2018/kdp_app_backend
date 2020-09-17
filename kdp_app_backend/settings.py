@@ -78,7 +78,11 @@ REST_FRAMEWORK = {
 
 ROOT_URLCONF = 'kdp_app_backend.urls'
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = False
+
+CORS_ORIGIN_WHITELIST = (
+       'localhost:8080',
+)
 
 TEMPLATES = [
     {
@@ -113,7 +117,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'kdp_app',
-        'USER': 'kdp_app',
+        'USER': 'root',
         'PASSWORD': 'codeforsolutions.com',
         'HOST': 'localhost',
         'PORT': '',
