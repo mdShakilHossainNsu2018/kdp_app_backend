@@ -28,9 +28,8 @@ SECRET_KEY = ')nie8dez3tn8fhve=8q1#l9z2&oz7d^y@gncxd*b2=7f23mxo)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['164.90.238.120']
+ALLOWED_HOSTS = ['164.90.238.120', 'https://pure-beyond-40245.herokuapp.com/category-lists']
 # ALLOWED_HOSTS = []
-
 X_FRAME_OPTIONS = 'ALLOW-FROM http://127.0.0.1:8000/'
 
 # Application definition
